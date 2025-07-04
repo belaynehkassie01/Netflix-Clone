@@ -1,6 +1,6 @@
 
 .banner{
-    margin-top: 10vh;
+    margin-top: 0vh;
     height: 80vh;
     margin-bottom: -80px;
     color: white;
@@ -21,7 +21,6 @@
     line-height: 1.3;
     padding-top: 1rem;
     font-size: 1.2rem;
-
     height: 80px;
     max-width: 360px;
 }

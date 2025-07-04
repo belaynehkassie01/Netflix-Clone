@@ -10,6 +10,8 @@
     overflow-y: hidden;
     overflow-x: scroll;
     padding: 20px;
+    cursor: pointer;
+    margin-top: 30px;
 }
 .row_posters::-webkit-scrollbar{
     display: none;
@@ -26,4 +28,5 @@
 .row{
     color: white;
     margin-left: 20px;
+    margin-bottom: -180px;
 }
