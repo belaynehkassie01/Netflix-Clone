@@ -31,6 +31,7 @@
    list-style: none;
    cursor: pointer;
 }
+
 .header_right ul{
     width: 150%;
     display: flex;

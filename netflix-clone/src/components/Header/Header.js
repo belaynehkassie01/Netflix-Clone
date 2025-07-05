@@ -20,8 +20,7 @@ const Header = ()=> {
               <li>Latest</li>
               <li>MyList</li>
               <li>Browse by Language</li>
-            
-          </ul>
+                  </ul>
               </div>
         <div className='header_right'>
                   <ul>
@@ -29,6 +28,7 @@ const Header = ()=> {
                       <li><NotificationsIcon /></li>
                       <li><AccountBoxIcon /></li>
                       <li><ArrowDropDownIcon /></li>
+                      
                   </ul>
         </div>
        </div>
