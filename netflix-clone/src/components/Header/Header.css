@@ -4,15 +4,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: rgb(148, 132, 132); */
     background-color: rgb(20, 20, 20);
-    /* background-color: transparent; */
     height: 10vh;
     color: white;
     transition: all 0.5s;
     transition-timing-function: ease-in;
-    z-index: 1;
-    /* background-color: red; */
+    z-index: 1000;
 }            
 .nav_black{
     background-color: rgba(0, 0, 0, 0.997);
@@ -38,4 +35,382 @@
     justify-content: space-around;
     cursor: pointer;
     list-style: none;
+}
+
+/* Responsive Styles - Added below your existing CSS */
+
+/* Mobile hamburger menu button */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    margin-left: 20px;
+    width: 25px;
+    height: 20px;
+    position: relative;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: #fff;
+    border-radius: 2px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+
+.hamburger span:nth-child(1) {
+    top: 0px;
+}
+
+.hamburger span:nth-child(2) {
+    top: 8px;
+}
+
+.hamburger span:nth-child(3) {
+    top: 16px;
+}
+
+/* Hamburger to X transformation */
+.hamburger.open span:nth-child(1) {
+    top: 8px;
+    transform: rotate(135deg);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+}
+
+.hamburger.open span:nth-child(3) {
+    top: 8px;
+    transform: rotate(-135deg);
+}
+
+/* Mobile menu overlay - Netflix style */
+.mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 999;
+    display: none;
+    padding-top: 60px;
+    overflow-y: auto;
+}
+
+.mobile-nav-overlay.active {
+    display: block;
+}
+
+.mobile-nav-menu {
+    padding: 15px;
+}
+
+.mobile-nav-item {
+    color: #fff;
+    font-size: 1rem;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.mobile-nav-item:hover {
+    color: #e50914;
+}
+
+.mobile-nav-item:last-child {
+    border-bottom: none;
+}
+
+/* Tablet screens - Reduced header height */
+@media screen and (max-width: 1100px) {
+    .header_outer_container {
+        height: 8vh; /* Smaller height for tablet */
+    }
+    
+    .header_left ul {
+        width: 160%;
+    }
+    
+    .header_right ul {
+        width: 170%;
+    }
+    
+    .header_left ul li:nth-child(7) {
+        display: none;
+    }
+}
+
+/* Smaller tablets - Even smaller header */
+@media screen and (max-width: 900px) {
+    .header_outer_container {
+        height: 7vh; /* Smaller height for smaller tablets */
+    }
+    
+    .header_container {
+        width: 95%;
+    }
+    
+    .header_left ul {
+        width: 180%;
+    }
+    
+    .header_left ul li:nth-child(6) {
+        display: none;
+    }
+}
+
+/* Mobile devices - Smallest header height */
+@media screen and (max-width: 768px) {
+    .header_outer_container {
+        height: 6vh; /* Smallest height for mobile */
+        min-height: 50px; /* Minimum height for touch targets */
+    }
+    
+    .header_left ul {
+        display: none;
+    }
+    
+    .hamburger {
+        display: block;
+        width: 22px;
+        height: 18px;
+        margin-left: 15px;
+    }
+    
+    .hamburger span {
+        height: 2px;
+    }
+    
+    .hamburger span:nth-child(2) {
+        top: 7px;
+    }
+    
+    .hamburger span:nth-child(3) {
+        top: 14px;
+    }
+    
+    .hamburger.open span:nth-child(1) {
+        top: 7px;
+    }
+    
+    .hamburger.open span:nth-child(3) {
+        top: 7px;
+    }
+    
+    .header_left {
+        display: flex;
+        align-items: center;
+    }
+    
+    .header_left img {
+        width: 80px !important; /* Smaller logo for mobile */
+        height: auto;
+    }
+    
+    .header_right ul {
+        width: 200%;
+    }
+    
+    .mobile-nav-overlay {
+        padding-top: 50px; /* Adjusted for smaller header */
+    }
+}
+
+/* Medium mobile devices */
+@media screen and (max-width: 600px) {
+    .header_outer_container {
+        height: 5.5vh;
+        min-height: 45px;
+    }
+    
+    .header_right ul li:first-child {
+        display: none;
+    }
+    
+    .header_left img {
+        width: 70px !important;
+    }
+    
+    .hamburger {
+        width: 20px;
+        height: 16px;
+        margin-left: 12px;
+    }
+    
+    .hamburger span:nth-child(2) {
+        top: 6px;
+    }
+    
+    .hamburger span:nth-child(3) {
+        top: 12px;
+    }
+    
+    .hamburger.open span:nth-child(1) {
+        top: 6px;
+    }
+    
+    .hamburger.open span:nth-child(3) {
+        top: 6px;
+    }
+}
+
+/* Small mobile devices */
+@media screen and (max-width: 480px) {
+    .header_outer_container {
+        height: 5vh;
+        min-height: 40px;
+    }
+    
+    .header_right ul {
+        width: 250%;
+        justify-content: flex-end;
+    }
+    
+    .header_right ul li:nth-child(2) {
+        margin-right: 12px;
+    }
+    
+    .header_right ul li:nth-child(4) {
+        display: none;
+    }
+    
+    .header_left img {
+        width: 65px !important;
+    }
+    
+    .mobile-nav-overlay {
+        padding-top: 45px;
+    }
+    
+    .mobile-nav-item {
+        font-size: 0.95rem;
+        padding: 10px 0;
+    }
+}
+
+/* Extra small mobile devices */
+@media screen and (max-width: 360px) {
+    .header_outer_container {
+        height: 4.5vh;
+        min-height: 35px;
+    }
+    
+    .header_left img {
+        width: 60px !important;
+    }
+    
+    .header_right ul li:nth-child(3) svg {
+        font-size: 1.2rem;
+    }
+    
+    .header_right ul li:nth-child(2) svg {
+        font-size: 1.1rem;
+    }
+    
+    .hamburger {
+        width: 18px;
+        height: 14px;
+        margin-left: 10px;
+    }
+    
+    .hamburger span {
+        height: 1.5px;
+    }
+    
+    .hamburger span:nth-child(2) {
+        top: 5px;
+    }
+    
+    .hamburger span:nth-child(3) {
+        top: 10px;
+    }
+    
+    .hamburger.open span:nth-child(1) {
+        top: 5px;
+    }
+    
+    .hamburger.open span:nth-child(3) {
+        top: 5px;
+    }
+    
+    .mobile-nav-overlay {
+        padding-top: 40px;
+    }
+    
+    .mobile-nav-item {
+        font-size: 0.9rem;
+        padding: 8px 0;
+    }
+}
+
+/* Ensure header items are properly aligned with smaller height */
+.header_left ul li {
+    white-space: nowrap;
+    font-size: 0.9rem;
+    padding: 0 5px;
+    transition: font-size 0.3s ease;
+}
+
+.header_right ul li {
+    padding: 0 5px;
+}
+
+/* Scale down font sizes for smaller headers on tablet */
+@media screen and (max-width: 1100px) {
+    .header_left ul li {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .header_left ul li {
+        font-size: 0.75rem;
+    }
+}
+
+/* Hover effects */
+.header_left ul li:hover,
+.header_right ul li:hover {
+    opacity: 0.8;
+}
+
+/* Icons scaling */
+.header_right ul li svg {
+    font-size: 1.5rem;
+    transition: font-size 0.3s ease;
+}
+
+@media screen and (max-width: 1100px) {
+    .header_right ul li svg {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header_right ul li svg {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header_right ul li svg {
+        font-size: 1rem;
+    }
+}
+
+/* Disable scroll when mobile menu is open */
+body.menu-open {
+    overflow: hidden;
 }
